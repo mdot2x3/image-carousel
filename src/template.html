@@ -3,8 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>App Title</title>
+    <title>Image Carousel</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
 
-  <body></body>
+  <body>
+    <div class="content">
+      <div class="container">
+        <i class="fa-solid fa-chevron-left"></i>
+        <div class="carousel">
+            <img src="https://picsum.photos/800/400?image=0" class="carousel-item alt="Image 1" />
+            <img src="https://picsum.photos/800/400?image=1" class="carousel-item alt="Image 2" />
+            <img src="https://picsum.photos/800/400?image=2" class="carousel-item active alt="Image 3" />
+            <img src="https://picsum.photos/800/400?image=3" class="carousel-item  alt="Image 4" />
+            <img src="https://picsum.photos/800/400?image=4" class="carousel-item alt="Image 5" />
+        </div>
+        <i class="fa-solid fa-chevron-right"></i>
+      </div>
+      <div class="selectors">
+        <div class="circle active"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </div>
+    </div>
+  </body>
 </html>
