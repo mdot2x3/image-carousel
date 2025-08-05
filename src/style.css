@@ -7,7 +7,7 @@ body {
   height: 100%;
   margin-top: 10vw;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 .container i {
@@ -23,6 +23,7 @@ body {
   gap: 20px;
   width: 80vw;
   overflow: hidden;
+  transition: transform 0.5s cubic-bezier(0.77, 0, 0.18, 1);
 }
 .carousel-item {
   width: 120px;
