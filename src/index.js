@@ -18,6 +18,8 @@ const imageSources = [
 const visibleCount = 5;
 // initially set the centerIndex image to the center-most image
 let centerIndex = Math.floor(imageSources.length / 2);
+// set autoscroll to 5 seconds
+let autoAdvance = setInterval(nextImage, 5000);
 
 function renderCarousel() {
   const carousel = document.querySelector(".carousel");
@@ -70,10 +72,30 @@ function prevImage() {
   renderCarousel();
 }
 
+function resetAutoAdvance() {
+  clearInterval(autoAdvance);
+  autoAdvance = setInterval(nextImage, 5000);
+}
+
+// advance to next or previous image on arrow/circle click and reset interval
+document.querySelector(".fa-chevron-right").addEventListener("click", () => {
+  nextImage();
+  resetAutoAdvance();
+});
+document.querySelector(".fa-chevron-left").addEventListener("click", () => {
+  prevImage();
+  resetAutoAdvance();
+});
 document
-  .querySelector(".fa-chevron-right")
-  .addEventListener("click", nextImage);
-document.querySelector(".fa-chevron-left").addEventListener("click", prevImage);
+  .querySelector(".selectors")
+  .addEventListener("click", resetAutoAdvance);
+
+// pause interval on hover
+const carouselContainer = document.querySelector(".container");
+carouselContainer.addEventListener("mouseenter", () =>
+  clearInterval(autoAdvance),
+);
+carouselContainer.addEventListener("mouseleave", resetAutoAdvance);
 
 renderCarousel();
 renderSelectors();
